@@ -2,9 +2,37 @@ import tkinter
 from tkinter import *
 
 gui = Tk()
-gui.geometry("312x324")
+gui.geometry("512x524")
 gui.resizable(0, 0)
 gui.title("Calculator/Converter")
+
+var=StringVar()
+start_label = Label(gui,
+                    textvariable=var,
+                    bg="white",
+                    relief="raised",
+                    width=15,
+                    height=7,
+                    anchor=CENTER,
+                    padx=4)
+var.set("label")
+start_label.pack()
+
+start_label.pack()
+b1 = Button(gui,
+            text="Button one",
+            width=10,
+            height=5)
+b1.pack(anchor=CENTER)
+
+b2 = Button(gui,
+            text="Button two",
+            width=10,
+            height=5)
+b2.pack(anchor=CENTER)
+
+
+gui.mainloop()
 
 
 def number_systems():
