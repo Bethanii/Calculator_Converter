@@ -1,36 +1,69 @@
 import tkinter
 from tkinter import *
+from tkinter import messagebox
+
+
+def calc_window():
+    newwindow = Toplevel(gui)
+    newwindow.geometry("512x524")
+    newwindow.resizable(0, 0)
+    newwindow.title("new window")
+
+    one = Button(gui,
+                 text="1",
+                 width=18,
+                 height=5,
+                 bg="mediumpurple1")
+    one.grid(row="1", column="2")
+
+    one = Button(gui,
+                 text="1",
+                 width=18,
+                 height=5,
+                 bg="mediumpurple1")
+    one.grid(row="1", column="2")
+
 
 gui = Tk()
 gui.geometry("512x524")
 gui.resizable(0, 0)
+gui.configure(background="pink")
 gui.title("Calculator/Converter")
 
 var=StringVar()
-start_label = Label(gui,
+blank_label = Label(gui,
                     textvariable=var,
-                    bg="white",
-                    relief="raised",
-                    width=15,
+                    text="k",
+                    bg="RosyBrown1",
+                    width=20,
                     height=7,
                     anchor=CENTER,
                     padx=4)
-var.set("label")
-start_label.pack()
+blank_label.pack(fill="both")
 
-start_label.pack()
+start_label = Label(gui,
+                    text="Chose the function you would like to use",
+                    bg="pink",
+                    width=20,
+                    height=7,
+                    anchor=CENTER,
+                    padx=4)
+start_label.pack(fill="both")
+
 b1 = Button(gui,
-            text="Button one",
-            width=10,
-            height=5)
-b1.pack(anchor=CENTER)
+            text="Calculator",
+            width=18,
+            height=5,
+            bg="mediumpurple1",
+            command=calc_window)
+b1.pack(side=LEFT, fill="none", expand=True)
 
 b2 = Button(gui,
-            text="Button two",
-            width=10,
-            height=5)
-b2.pack(anchor=CENTER)
-
+            text="Converter",
+            width=18,
+            height=5,
+            bg="mediumpurple1")
+b2.pack(side=RIGHT, fill="none", expand=True)
 
 gui.mainloop()
 
