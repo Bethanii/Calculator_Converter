@@ -109,6 +109,13 @@ def calc_window():
                     command=lambda: bt_equal()).grid(row=4, column=3, padx=1, pady=1)
 
 
+def convert_window():
+    win = Toplevel(gui)
+    win.geometry("342x327")
+    win.resizable(0, 0)
+    win.title("Converter")
+
+
 gui = Tk()
 gui.geometry("450x475")
 gui.resizable(0, 0)
@@ -148,7 +155,10 @@ b2 = Button(gui,
             text="Converter",
             width=18,
             height=5,
-            bg="Light blue")
+            bg="Light blue",
+            command=convert_window)
+
+
 b2.pack(side=RIGHT, fill="none", expand=True)
 gui.mainloop()
 
